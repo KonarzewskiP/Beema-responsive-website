@@ -3,12 +3,12 @@ import styled from "styled-components";
 import {theme} from "../../theme";
 
 const ButtonWrapper = styled.button`
-  padding: 7px 15px;
+  padding: ${({small}) => small ?  "5px 8px" : "7px 15px"};
   border-radius: 5px;
   background-color: ${theme.primary};
   color: #ffffff;
   font-weight: bold;
-  font-size: 16px;
+  font-size: ${({small}) => small ?  "12px" : "16px"};
   outline: none;
   border: 2px solid transparent;
   transition: all 250ms ease-in-out;

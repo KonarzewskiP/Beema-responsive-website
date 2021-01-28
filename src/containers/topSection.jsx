@@ -6,6 +6,7 @@ import Logo from "../components/logo";
 import Marginer from "../components/marginer";
 import Button from "../components/button";
 import DownArrow from "../components/downArrow";
+import Navbar from "../components/navbar";
 
 const TopContainer = styled.div`
   width: 100%;
@@ -38,13 +39,13 @@ const DownArrowContainer = styled.div`
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-
 `
 
 function TopSection(props) {
     return (
         <TopContainer>
             <BackgroundFilter>
+                <Navbar />
                 <Marginer direction="vertical" margin="8em"/>
                 <Logo/>
                 <Marginer direction="vertical" margin="4em"/>
