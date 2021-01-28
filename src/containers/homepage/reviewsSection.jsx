@@ -14,11 +14,11 @@ import User3Img from '../../assets/pictures/profile_picture_3.jpg'
 import User4Img from '../../assets/pictures/profile_picture_4.jpeg'
 
 const ReviewsContainer = styled(Element)`
-  height:800px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   .carousel__dot-group {
     display: flex;
     justify-content: center;
@@ -27,33 +27,28 @@ const ReviewsContainer = styled(Element)`
 
 const StyledCarouselProvider = styled(CarouselProvider)`
   width: 50%;
-  
+
 `
 
 const StyledSlide = styled(Slide)`
-.carousel__inner-slide {
-  display: flex;
-  justify-content: center;
-}
+  .carousel__inner-slide {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const StyledDotGroup = styled(DotGroup)`
-  
+
   button {
-    //-webkit-appearance: none;
-    //-moz-appearance: none;
-    //appearance: none;
-    //width: 13px;
-    //height: 13px;
     padding: 6px;
-    //margin: 4rem;
     border-radius: 50%;
     background-color: #e4e4e4;
     border: none;
     outline: none;
+
     //If its not last element
     &:not(:last-of-type) {
-      margin-right: 0.3rem;
+      margin-right: 3px;
     }
   }
 
