@@ -1,0 +1,115 @@
+import React from 'react';
+import {Element} from "react-scroll";
+import styled from "styled-components";
+import {SectionTitle} from "../../components/sectionTitle";
+import Marginer from "../../components/marginer";
+import {CarouselProvider, Slider, Slide, DotGroup} from "pure-react-carousel";
+import ReviewCard from "../../components/reviewCard";
+
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
+import User1Img from '../../assets/pictures/profile_picture_1.jpg'
+import User2Img from '../../assets/pictures/profile_picture_2.jpg'
+import User3Img from '../../assets/pictures/profile_picture_3.jpg'
+import User4Img from '../../assets/pictures/profile_picture_4.jpeg'
+
+const ReviewsContainer = styled(Element)`
+  height:800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .carousel__dot-group {
+    display: flex;
+    justify-content: center;
+  }
+`
+
+const StyledCarouselProvider = styled(CarouselProvider)`
+  width: 50%;
+  
+`
+
+const StyledSlide = styled(Slide)`
+.carousel__inner-slide {
+  display: flex;
+  justify-content: center;
+}
+`
+
+const StyledDotGroup = styled(DotGroup)`
+  
+  button {
+    //-webkit-appearance: none;
+    //-moz-appearance: none;
+    //appearance: none;
+    //width: 13px;
+    //height: 13px;
+    padding: 6px;
+    //margin: 4rem;
+    border-radius: 50%;
+    background-color: #e4e4e4;
+    border: none;
+    outline: none;
+    //If its not last element
+    &:not(:last-of-type) {
+      margin-right: 0.3rem;
+    }
+  }
+
+  .carousel__dot--selected {
+    background-color: #c4c4c4;
+  }
+
+`
+
+const ReviewsSection = () => {
+    return (
+        <ReviewsContainer>
+            <SectionTitle>What others are saying about us</SectionTitle>
+            <Marginer direction="vertical" margin="3em"/>
+            <StyledCarouselProvider
+                naturalSlideWidth={200}
+                naturalSlideHeight={205}
+                totalSlides={4}
+                visibleSlides={2}
+                dragEnabled={false}
+            >
+                <Slider>
+                    <StyledSlide index={0}>
+                        <ReviewCard
+                            reviewText=" I very much enjoyed working with Beema and the team - they have an excellent grasp of their subject, and have created something great for us."
+                            username="John coner"
+                            userImgUrl={User1Img}
+                        />
+                    </StyledSlide>
+                    <StyledSlide index={1}>
+                        <ReviewCard
+                            reviewText=" I very much enjoyed working with Beema and the team - they have an excellent grasp of their subject, and have created something great for us."
+                            username="Megan borguer"
+                            userImgUrl={User2Img}
+                        />
+                    </StyledSlide>
+                    <StyledSlide index={2}>
+                        <ReviewCard
+                            reviewText=" I very much enjoyed working with Beema and the team - they have an excellent grasp of their subject, and have created something great for us."
+                            username="Dustin Porier"
+                            userImgUrl={User3Img}
+                        />
+                    </StyledSlide>
+                    <StyledSlide index={3}>
+                        <ReviewCard
+                            reviewText=" I very much enjoyed working with Beema and the team - they have an excellent grasp of their subject, and have created something great for us."
+                            username="Marc Aurelius"
+                            userImgUrl={User4Img}
+                        />
+                    </StyledSlide>
+                </Slider>
+                <StyledDotGroup/>
+            </StyledCarouselProvider>
+        </ReviewsContainer>
+    );
+
+};
+
+export default ReviewsSection;

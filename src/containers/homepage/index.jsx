@@ -5,6 +5,8 @@ import styled from "styled-components";
 import TopSection from "./topSection";
 import GlobalStyle from "../../components/GlobalStyling";
 import ServicesSection from "./servicesSection";
+import ReviewsSection from "./reviewsSection";
+import Marginer from "../../components/marginer";
 
 
 const PageContainer = styled.div`
@@ -20,6 +22,8 @@ export function Homepage(props) {
             <GlobalStyle/>
             <TopSection/>
             <ServicesSection/>
+            <Marginer direction="vertical" margin="2em" />
+            <ReviewsSection/>
         </PageContainer>
-    )
+    );
 }

@@ -2,8 +2,7 @@ import {Homepage} from "./containers/homepage";
 
 function App() {
     return (
-            <Homepage/>
-
+        <Homepage/>
     )
 }
 
