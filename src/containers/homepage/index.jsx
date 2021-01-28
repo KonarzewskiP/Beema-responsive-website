@@ -2,8 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 
 
-import TopSection from "../topSection";
+import TopSection from "./topSection";
 import GlobalStyle from "../../components/GlobalStyling";
+import ServicesSection from "./servicesSection";
 
 
 const PageContainer = styled.div`
@@ -18,6 +19,7 @@ export function Homepage(props) {
         <PageContainer>
             <GlobalStyle/>
             <TopSection/>
+            <ServicesSection/>
         </PageContainer>
     )
 }
