@@ -8,6 +8,7 @@ import ServicesSection from "./servicesSection";
 import ReviewsSection from "./reviewsSection";
 import Marginer from "../../components/marginer";
 import MoreAboutSection from "./moreAboutSection";
+import Footer from "../../components/footer";
 
 
 const PageContainer = styled.div`
@@ -25,8 +26,9 @@ export function Homepage(props) {
             <ServicesSection/>
             <Marginer direction="vertical" margin="2em" />
             <ReviewsSection/>
-            <Marginer direction="vertical" margin="2em" />
             <MoreAboutSection />
+            <Marginer direction="vertical" margin="9em" />
+            <Footer/>
         </PageContainer>
     );
 }

@@ -7,7 +7,8 @@ import {theme} from "../../theme";
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: ${({inline}) => inline ? "row" : "column"};
-  align-items: ${({inline}) => inline && "center"};
+  //align-items: ${({inline}) => inline && "center"};
+  justify-content: center;
 `
 
 const LogoImg = styled.img`
@@ -19,22 +20,28 @@ const LogoImg = styled.img`
     height: 25px;
     margin-right: 6px;
   `};
+
+  ${({small}) => small && css`
+    width: 5em;
+    height: 5em;
+  `};
 `;
 
 const LogoText = styled.div`
   margin-top: ${({inline}) => inline ? 0 : "6px"};
-  font-size: ${({inline}) => inline ? "18px" : "40px"};
+  font-size: ${({inline, small}) => inline ? "18px" : small ? "21px" : "40px"};
   color: ${({inline}) => inline ? "#fff" : theme.primary};
   font-weight: 900;
+  text-align: center;
 `
 
 const Logo = (props) => {
-    const {inline} = props;
+    const {inline, small} = props;
 
     return (
-        <LogoContainer inline={inline}>
-            <LogoImg src={BeemaLogo} inline={inline}/>
-            <LogoText inline={inline}>Beema</LogoText>
+        <LogoContainer inline={inline} small={small}>
+            <LogoImg src={BeemaLogo} inline={inline} small={small}/>
+            <LogoText inline={inline} small={small}>Beema</LogoText>
         </LogoContainer>
     );
 };
