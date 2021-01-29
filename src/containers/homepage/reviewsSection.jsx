@@ -5,6 +5,7 @@ import {SectionTitle} from "../../components/sectionTitle";
 import Marginer from "../../components/marginer";
 import {CarouselProvider, Slider, Slide, DotGroup} from "pure-react-carousel";
 import ReviewCard from "../../components/reviewCard";
+import {useMediaQuery} from "react-responsive";
 
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -28,6 +29,9 @@ const ReviewsContainer = styled(Element)`
 const StyledCarouselProvider = styled(CarouselProvider)`
   width: 50%;
 
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `
 
 const StyledSlide = styled(Slide)`
@@ -59,15 +63,18 @@ const StyledDotGroup = styled(DotGroup)`
 `
 
 const ReviewsSection = () => {
+
+    const isMobile = useMediaQuery({query: "(max-width: 480px)"});
+
     return (
         <ReviewsContainer>
             <SectionTitle>What others are saying about us</SectionTitle>
             <Marginer direction="vertical" margin="3em"/>
             <StyledCarouselProvider
                 naturalSlideWidth={200}
-                naturalSlideHeight={205}
+                naturalSlideHeight={isMobile ? 250 : 205}
                 totalSlides={4}
-                visibleSlides={2}
+                visibleSlides={isMobile ? 1 : 2}
                 dragEnabled={false}
             >
                 <Slider>
@@ -99,6 +106,7 @@ const ReviewsSection = () => {
                             userImgUrl={User4Img}
                         />
                     </StyledSlide>
+
                 </Slider>
                 <StyledDotGroup/>
             </StyledCarouselProvider>

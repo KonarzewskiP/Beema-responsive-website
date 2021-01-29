@@ -23,21 +23,18 @@ const MotivationalText = styled.h1`
   margin: 0;
   text-align: center;
 `
-const Line = styled.span`
-  min-width: 100%;
-  min-height: 1px;
-  margin-bottom: 1em;
-  background-color: #cdcdcd;
-  display: flex;
-`;
 
 const AccessibilityContainer = styled.div`
   width: 90%;
   display: flex;
   border-top: 1px solid #cdcdcd;
-  padding: 12px 8px 0 8px;
+  padding: 12px 10px 0 10px;
   color: #ffffff;
   justify-content: space-between;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
 `
 
 const PrivacyContainer = styled.div`
@@ -55,6 +52,13 @@ const SocialIcon = styled.div`
 
   &:not(:last-of-type) {
     margin-right: 12px;
+    @media (max-width: 480px) {
+      margin-right: 9px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
   }
 
   &:hover {
@@ -69,11 +73,17 @@ const Link = styled.a`
 
   &:not(:last-of-type) {
     margin-right: 12px;
+    @media (max-width: 480px) {
+      margin-right: 4px;
+    }
   }
 
   &:hover {
     color: #adadad;
+  }
 
+  @media (max-width: 480px) {
+    font-size: 12px;
   }
 `
 const RightsReserved = styled.div`

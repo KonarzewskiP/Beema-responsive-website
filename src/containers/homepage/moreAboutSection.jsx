@@ -4,12 +4,18 @@ import {Element} from "react-scroll";
 import {SectionTitle} from "../../components/sectionTitle";
 
 import AboutImgUrl from "../../assets/illustrations/rocket_launch_.png"
+import Marginer from "../../components/marginer";
 
 const MoreAboutContainer = styled(Element)`
   min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 1em;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `
 
 const AboutContainer = styled.div`
@@ -17,6 +23,11 @@ const AboutContainer = styled.div`
   justify-content: center;
   align-items: center;
   max-width: 1000px;
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    flex-direction: column-reverse;
+  }
 `
 
 const AboutText = styled.p`
@@ -31,12 +42,18 @@ const AboutImg = styled.img`
   width: 600px;
   height: 500px;
   margin-left: 3em;
+  @media (max-width: 480px) {
+    width: 350px;
+    height: 270px;
+    margin-left: 0;
+  }
 `
 
 const MoreAboutSection = () => {
     return (
         <MoreAboutContainer>
             <SectionTitle>More About Beema</SectionTitle>
+            <Marginer direction="vertical" margin="2em" />
             <AboutContainer>
                 <AboutText>
                     Beema is about designing, building and deliverying best quality software for your company.
